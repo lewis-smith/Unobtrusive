@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UnobtrusivePromptView" customModule="UnobtrusivePrompt" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomConstraint" destination="8Jj-ul-CQ2" id="aKC-en-LiO"/>
+                <outlet property="button" destination="Mtm-yO-AIw" id="FG8-Nz-dnx"/>
+                <outlet property="label" destination="SNn-vN-qG9" id="cVN-rf-hJz"/>
+                <outlet property="topConstraint" destination="hHT-ML-Q0f" id="WPH-ye-0Yy"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello world" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNn-vN-qG9">
+                    <rect key="frame" x="8" y="8" width="311" height="40"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mtm-yO-AIw">
+                    <rect key="frame" x="327" y="13" width="40" height="30"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="T0A-nY-xHa"/>
+                        <constraint firstAttribute="height" constant="30" id="xYX-ZJ-Ju6"/>
+                    </constraints>
+                    <state key="normal" title="Go"/>
+                    <connections>
+                        <action selector="goButtonTapped:" destination="-1" eventType="touchUpInside" id="Tbw-Ro-1Wo"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="SNn-vN-qG9" secondAttribute="bottom" constant="8" id="8Jj-ul-CQ2"/>
+                <constraint firstItem="Mtm-yO-AIw" firstAttribute="leading" secondItem="SNn-vN-qG9" secondAttribute="trailing" constant="8" id="LsC-99-hoV"/>
+                <constraint firstAttribute="trailing" secondItem="Mtm-yO-AIw" secondAttribute="trailing" constant="8" id="N1i-f6-7LL"/>
+                <constraint firstItem="SNn-vN-qG9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="UF5-6Q-KXi"/>
+                <constraint firstItem="SNn-vN-qG9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="hHT-ML-Q0f"/>
+                <constraint firstItem="Mtm-yO-AIw" firstAttribute="centerY" secondItem="SNn-vN-qG9" secondAttribute="centerY" id="wE6-rh-TrQ"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="nQN-fL-wfC" appends="YES" id="kLu-I2-BMn"/>
+            </connections>
+            <point key="canvasLocation" x="-313.5" y="-214"/>
+        </view>
+        <tapGestureRecognizer id="nQN-fL-wfC">
+            <connections>
+                <action selector="notificationTapped:" destination="-1" id="Mse-Nt-KSC"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+</document>
