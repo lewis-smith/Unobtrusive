@@ -13,6 +13,11 @@ import UIKit
 
 public class UnobtrusiveView: UIView {
     
+    public enum ActionTaken {
+        case TappedGo
+        case Dismissed
+    }
+
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet public weak var label: UILabel!
@@ -20,7 +25,7 @@ public class UnobtrusiveView: UIView {
     var contentView : UIView?
     
     public var tapGoCallback : (() -> Void)?
-    public var tapCloseCallback : (() -> Void)?
+    public var tapDismissCallback : (() -> Void)?
     
     override public var backgroundColor: UIColor? {
         didSet {
@@ -87,15 +92,14 @@ public class UnobtrusiveView: UIView {
     }
     
     @IBAction func goButtonTapped(_ sender: Any) {
-        if (self.tapGoCallback == nil) {
-            print("Set tapGoCallback")
-            return
-        }
-        
-        self.tapGoCallback!();
+        dismissView(actionTaken: ActionTaken.TappedGo)
     }
     
     @IBAction func notificationTapped(_ sender: Any) {
+        dismissView(actionTaken: ActionTaken.Dismissed)
+    }
+    
+    func dismissView(actionTaken: ActionTaken) {
         self.superview?.layoutIfNeeded()
         
         self.label.text = ""
@@ -107,12 +111,24 @@ public class UnobtrusiveView: UIView {
             self.superview?.layoutIfNeeded()
         }) { (finished: Bool) in
             if finished {
-                if (self.tapCloseCallback != nil) {
-                    self.tapCloseCallback!();
+                switch actionTaken {
+                case ActionTaken.TappedGo :
+                    if let callback = self.tapGoCallback {
+                        callback()
+                    } else {
+                         print("Nothing happened when you tapped go, define .tapGoCallback")
+                    }
+                    
+                    break
+                case ActionTaken.Dismissed :
+                    if let callback = self.tapDismissCallback {
+                        callback()
+                        break
+                    }
+                    
                 }
             }
         }
-        
-        
+
     }
 }
