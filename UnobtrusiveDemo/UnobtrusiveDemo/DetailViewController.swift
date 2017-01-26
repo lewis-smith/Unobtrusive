@@ -26,24 +26,23 @@ class DetailViewController: UIViewController {
         
         if let promptView = self.unobtrusiveView {
             if self.view.tag == 1 {
-                promptView.setLabelText(text: "short text")
+                promptView.setLabel(text: "short text")
             }
             if self.view.tag == 2 {
                 // do not set label text
             }
             if self.view.tag == 3 {
-                promptView.setLabelText(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+                promptView.setLabel(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
             }
             
             promptView.tapGoCallback = {
                 print("\(self.view.tag)")
             }
             
-            promptView.tapCloseCallback = {
+            promptView.tapDismissCallback = {
                 print("closed")
             }
             
-            promptView.label.font = 
             promptView.button.backgroundColor = UIColor.blue
             promptView.button.setTitleColor(UIColor.white, for: .normal)
             promptView.backgroundColor = UIColor.gray

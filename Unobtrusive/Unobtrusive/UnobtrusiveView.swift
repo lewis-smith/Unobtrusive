@@ -18,6 +18,9 @@ public class UnobtrusiveView: UIView {
         case Dismissed
     }
 
+    @IBOutlet weak var buttonTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var buttonBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var buttonHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet public weak var label: UILabel!
@@ -105,6 +108,9 @@ public class UnobtrusiveView: UIView {
         self.label.text = ""
         self.topConstraint.constant = 0
         self.bottomConstraint.constant = 0
+        self.buttonTopConstraint.constant = 0
+        self.buttonTopConstraint.constant = 0
+        self.buttonBottomConstraint.constant = 0
         self.button.isHidden = true
         
         UIView.animate(withDuration: 0.125, animations: {

@@ -9,10 +9,13 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UnobtrusivePromptView" customModule="Unobtrusive" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UnobtrusiveView" customModule="Unobtrusive" customModuleProvider="target">
             <connections>
                 <outlet property="bottomConstraint" destination="8Jj-ul-CQ2" id="aKC-en-LiO"/>
                 <outlet property="button" destination="Mtm-yO-AIw" id="FG8-Nz-dnx"/>
+                <outlet property="buttonBottomConstraint" destination="qb7-68-gxQ" id="QDA-ta-jha"/>
+                <outlet property="buttonHeightConstraint" destination="xYX-ZJ-Ju6" id="EOC-eE-kga"/>
+                <outlet property="buttonTopConstraint" destination="Hpx-sY-bfH" id="IZG-is-mMR"/>
                 <outlet property="label" destination="SNn-vN-qG9" id="cVN-rf-hJz"/>
                 <outlet property="topConstraint" destination="hHT-ML-Q0f" id="WPH-ye-0Yy"/>
             </connections>
