@@ -54,7 +54,7 @@ public class UnobtrusiveView: UIView {
     }
     
     public override func prepareForInterfaceBuilder() {
-        setLabelText(text: "call .setLabelText(\"to set this text\")")
+        setLabel(text: "call .setLabelText(\"to set this text\")")
     }
     
     private func loadViewFromNib() -> UIView! {
@@ -81,12 +81,17 @@ public class UnobtrusiveView: UIView {
         self.topConstraint.constant = 8
     }
     
-    public func setLabelText(text: String) {
+    public func setLabel(text: String) {
         show()
         self.label.text = text
     }
     
     @IBAction func goButtonTapped(_ sender: Any) {
+        if (self.tapGoCallback == nil) {
+            print("Set tapGoCallback")
+            return
+        }
+        
         self.tapGoCallback!();
     }
     
