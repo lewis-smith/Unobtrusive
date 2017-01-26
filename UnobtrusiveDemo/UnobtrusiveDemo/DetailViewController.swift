@@ -43,6 +43,7 @@ class DetailViewController: UIViewController {
                 print("closed")
             }
             
+            promptView.label.font = 
             promptView.button.backgroundColor = UIColor.blue
             promptView.button.setTitleColor(UIColor.white, for: .normal)
             promptView.backgroundColor = UIColor.gray
