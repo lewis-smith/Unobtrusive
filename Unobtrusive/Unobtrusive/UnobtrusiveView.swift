@@ -75,18 +75,26 @@ public class UnobtrusiveView: UIView {
     }
     
     public func hide() {
-        self.button.isHidden = true
         self.label.text = ""
         self.label.isHidden = true
-        self.bottomConstraint.constant = 0
         self.topConstraint.constant = 0
+        self.bottomConstraint.constant = 0
+        self.buttonTopConstraint.constant = 0
+        self.buttonBottomConstraint.constant = 0
+        self.buttonHeightConstraint.constant = 0
+        self.button.isHidden = true
     }
     
     public func show() {
         self.button.isHidden = false
         self.label.isHidden = false
-        self.bottomConstraint.constant = 8
+        
         self.topConstraint.constant = 8
+        self.bottomConstraint.constant = 8
+        self.buttonTopConstraint.constant = 6
+        self.buttonBottomConstraint.constant = 6
+        self.buttonHeightConstraint.constant = 44
+        
     }
     
     public func setLabel(text: String) {
@@ -105,13 +113,7 @@ public class UnobtrusiveView: UIView {
     func dismissView(actionTaken: ActionTaken) {
         self.superview?.layoutIfNeeded()
         
-        self.label.text = ""
-        self.topConstraint.constant = 0
-        self.bottomConstraint.constant = 0
-        self.buttonTopConstraint.constant = 0
-        self.buttonTopConstraint.constant = 0
-        self.buttonBottomConstraint.constant = 0
-        self.button.isHidden = true
+        hide()
         
         UIView.animate(withDuration: 0.125, animations: {
             self.superview?.layoutIfNeeded()

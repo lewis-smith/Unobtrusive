@@ -1,5 +1,10 @@
 # Unobtrusive
 
+Add a polite configurable message to you your users.
+
+Still very young!
+
+## How to add
 - Add UIView to your View Controller Scene (or XIB).
 - Pin the top, left and right edges edges of the screen
 - Pin the bottom to any element underneath
